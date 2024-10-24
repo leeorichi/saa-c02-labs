@@ -1,0 +1,22 @@
+aws iam create-group --group-name ec2
+{
+    "Group": {
+        "Path": "/",
+        "GroupName": "ec2",
+        "GroupId": "AGPAXKPUZS6AMZE44UIVX",
+        "Arn": "arn:aws:iam::503561426816:group/ec2",
+        "CreateDate": "2024-10-24T11:11:54+00:00"
+    }
+}
+
+
+
+
+aws iam add-user-to-group \
+    --user-name ec2 \
+    --group-name ec2
+
+
+aws iam attach-group-policy \
+--policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess \
+--group-name ec2
